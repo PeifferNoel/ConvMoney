@@ -13,15 +13,15 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
-    Button1: TButton;
-    FloatSpinEdit1: TFloatSpinEdit;
-    FloatSpinEdit2: TFloatSpinEdit;
-    Label1: TLabel;
-    Label2: TLabel;
-    RadioButton1: TRadioButton;
-    RadioButton2: TRadioButton;
-    RadioGroup1: TRadioGroup;
-    procedure Button1Click(Sender: TObject);
+    Btn: TButton;
+    SpinEuro: TFloatSpinEdit;
+    SpinDollar: TFloatSpinEdit;
+    LabelE: TLabel;
+    LabelD: TLabel;
+    EvD: TRadioButton;
+    DvE: TRadioButton;
+    Options: TRadioGroup;
+    procedure BtnClick(Sender: TObject);
 
   private
 
@@ -41,15 +41,15 @@ implementation
 
 
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TForm1.BtnClick(Sender: TObject);
 begin
-  IF RadioButton1.Checked=true then
+  IF EvD.Checked=true then
   begin
-    FloatSpinEdit2.Value := FloatSpinEdit1.value*1.14
+    SpinDollar.Value := SpinEuro.value*1.14
   end
   else
   begin
-    FloatSpinEdit1.Value := FloatSpinEdit2.value/1.14
+    SpinEuro.Value := SpinDollar.value/1.14
   end;
 end;
 
